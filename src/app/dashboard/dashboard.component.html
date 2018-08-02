@@ -1,0 +1,11 @@
+<div class="grid-container container-fluid">
+	<div class="row">
+		<div class="col-sm-6 col-xs-12 dashboard-card">
+
+			<ngx-charts-pie-chart [scheme]="colorScheme" [results]="single" [legend]="showLegend" [explodeSlices]="explodeSlices" [labels]="showLabels"
+			 [doughnut]="doughnut" [gradient]="gradient" (select)="onSelect($event)">
+			</ngx-charts-pie-chart>
+
+		</div>
+	</div>
+</div>
