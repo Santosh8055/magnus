@@ -6,7 +6,17 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SideNavigationComponent } from './side-navigation/side-navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule } from '@angular/material';
+import { 
+  MatToolbarModule, 
+  MatButtonModule, 
+  MatSidenavModule, 
+  MatIconModule, 
+  MatListModule, 
+  MatGridListModule, 
+  MatCardModule, 
+  MatMenuModule,
+  MatInputModule
+} from '@angular/material';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RoutingModule } from './/routing.module';
 import { PhaseManagementComponent } from './phase-management/phase-management.component';
@@ -41,7 +51,8 @@ import { SecurityManagementComponent } from './security-management/security-mana
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule,
+	MatMenuModule,
+	MatInputModule,
     RoutingModule,
     NgxChartsModule
   ],

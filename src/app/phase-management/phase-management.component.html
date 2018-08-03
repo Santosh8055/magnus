@@ -1,3 +1,29 @@
-<p>
-  phase-management works!
-</p>
+<div class="phase-management container">
+	<h4>Phase management</h4>
+
+	<div class="container">
+		<div class="row">
+			<mat-form-field class="col-sm-6">
+				<input matInput="matInput"
+				       placeholder="Phase"
+				       value="" />
+			</mat-form-field>
+			<mat-form-field class="col-sm-6">
+				<input matInput="matInput"
+				       type="number"
+				       placeholder="No. of Units"
+				       value="" />
+			</mat-form-field>
+		</div>
+		<div class="container text-center">
+			<button mat-raised-button
+			        class="mr-2"
+			        (click)="handleAdd()"
+			        color="primary">Add</button>
+			<button mat-raised-button
+			        (click)="handleClear()"
+			        color="warn">Clear</button>
+		</div>
+	</div>
+
+</div>
