@@ -1,11 +1,68 @@
-<div class="grid-container container-fluid">
+<div class="grid-container container pt-1">
 	<div class="row">
-		<div class="col-sm-6 col-xs-12 dashboard-card">
+		<div class="col-md-6 col-sm-12 mt-1">
+			<div class="dashboard-card">
+				<ngx-charts-pie-chart
+					[results]="single"
+					[legend]="showLegend"
+					[explodeSlices]="explodeSlices"
+					[labels]="showLabels"
+					[gradient]="gradient"
+					(select)="onSelect($event)"
+				></ngx-charts-pie-chart>
+			</div>
+		</div>
 
-			<ngx-charts-pie-chart [scheme]="colorScheme" [results]="single" [legend]="showLegend" [explodeSlices]="explodeSlices" [labels]="showLabels"
-			 [doughnut]="doughnut" [gradient]="gradient" (select)="onSelect($event)">
-			</ngx-charts-pie-chart>
+		<div class="col-md-6 col-sm-12 mt-1">
+			<div class="dashboard-card">
+				<ngx-charts-bar-vertical
+					[results]="single"
+					[gradient]="gradient"
+					[xAxis]="showXAxis"
+					[yAxis]="showYAxis"
+					[legend]="showLegend"
+					[showXAxisLabel]="showXAxisLabel"
+					[showYAxisLabel]="showYAxisLabel"
+					[xAxisLabel]="xAxisLabel"
+					[yAxisLabel]="yAxisLabel"
+					(select)="onSelect($event)"
+				></ngx-charts-bar-vertical>
+			</div>
+		</div>
+	</div>
 
+	<div class="row">
+		<div class="col-md-6 col-sm-12 mt-1">
+			<div class="dashboard-card">
+				<ngx-charts-area-chart-stacked
+					[results]="stackedMulti"
+					[gradient]="gradient"
+					[xAxis]="showXAxis"
+					[yAxis]="showYAxis"
+					[legend]="showLegend"
+					[showXAxisLabel]="showXAxisLabel"
+					[showYAxisLabel]="showYAxisLabel"
+					[xAxisLabel]="xAxisLabel"
+					[yAxisLabel]="yAxisLabel"
+					(select)="onSelect($event)"
+				></ngx-charts-area-chart-stacked>
+			</div>
+		</div>
+
+		<div class="col-md-6 col-sm-12 mt-1">
+			<div class="dashboard-card">
+				<ngx-charts-gauge
+					[results]="guageData"
+					[min]="0"
+					[max]="100"
+					[angleSpan]="240"
+					[startAngle]="-120"
+					[units]="'alerts'"
+					[bigSegments]="10"
+					[smallSegments]="5"
+					(select)="onSelect($event)"
+				></ngx-charts-gauge>
+			</div>
 		</div>
 	</div>
 </div>
