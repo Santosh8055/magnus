@@ -29,10 +29,7 @@ $dark-theme: mat-dark-theme(
 	$custom-theme-accent,
 	$custom-theme-warn
 );
-.light-theme {
-	@include angular-material-theme($light-theme);
-}
-
+@include angular-material-theme($light-theme);
 .dark-theme {
 	@include angular-material-theme($dark-theme);
 }

@@ -17,16 +17,8 @@ export class SideNavigationComponent {
 		.observe(Breakpoints.Handset)
 		.pipe(map((result: any) => result.matches));
 
-	constructor(private breakpointObserver: BreakpointObserver) {
-		document.querySelector("body").classList.add("light-theme");
-	}
+	constructor(private breakpointObserver: BreakpointObserver) {}
 	toggleTheme() {
-		if (document.querySelector("body").classList.contains("light-theme")) {
-			document.querySelector("body").classList.remove("light-theme");
-			document.querySelector("body").classList.add("dark-theme");
-		} else {
-			document.querySelector("body").classList.remove("dark-theme");
-			document.querySelector("body").classList.add("light-theme");
-		}
+		document.querySelector("body").classList.toggle("dark-theme");
 	}
 }
