@@ -27,8 +27,7 @@ const ELEMENT_DATA: Element[] = [
 	{ position: 16, name: "Sulfur", weight: 32.065, symbol: "S" },
 	{ position: 17, name: "Chlorine", weight: 35.453, symbol: "Cl" },
 	{ position: 18, name: "Argon", weight: 39.948, symbol: "Ar" },
-	{ position: 19, name: "Potassium", weight: 39.0983, symbol: "K" },
-	{ position: 20, name: "Calcium", weight: 40.078, symbol: "Ca" }
+	{ position: 19, name: "Potassium", weight: 39.0983, symbol: "K" }
 ];
 
 @Component({
@@ -49,6 +48,14 @@ export class PhaseManagementComponent implements OnInit {
 
 	handleAdd() {
 		console.log("handling add");
+		let { data } = this.dataSource;
+		data.push({
+			position: 20,
+			name: "Calcium",
+			weight: 40.078,
+			symbol: "Ca"
+		});
+		this.dataSource.data = data;
 	}
 
 	handleClear() {
