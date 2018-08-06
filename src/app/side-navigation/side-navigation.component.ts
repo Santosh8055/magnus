@@ -1,20 +1,32 @@
-import { Component } from '@angular/core';
-import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Component } from "@angular/core";
+import {
+	BreakpointObserver,
+	Breakpoints,
+	BreakpointState
+} from "@angular/cdk/layout";
+import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
 
 @Component({
-	selector: 'side-navigation',
-	templateUrl: './side-navigation.component.html',
-	styleUrls: ['./side-navigation.component.scss']
+	selector: "side-navigation",
+	templateUrl: "./side-navigation.component.html",
+	styleUrls: ["./side-navigation.component.scss"]
 })
 export class SideNavigationComponent {
+	isHandset$: Observable<boolean> = this.breakpointObserver
+		.observe(Breakpoints.Handset)
+		.pipe(map((result: any) => result.matches));
 
-	isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-		.pipe(
-			map((result: any) => result.matches)
-		);
-
-	constructor(private breakpointObserver: BreakpointObserver) { }
-
+	constructor(private breakpointObserver: BreakpointObserver) {
+		document.querySelector("body").classList.add("light-theme");
+	}
+	toggleTheme() {
+		if (document.querySelector("body").classList.contains("light-theme")) {
+			document.querySelector("body").classList.remove("light-theme");
+			document.querySelector("body").classList.add("dark-theme");
+		} else {
+			document.querySelector("body").classList.remove("dark-theme");
+			document.querySelector("body").classList.add("light-theme");
+		}
+	}
 }
