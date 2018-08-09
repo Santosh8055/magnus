@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { MatPaginator, MatTableDataSource, MatSort } from "@angular/material";
 
+import { DataService } from "../services/data.service";
+
 export interface Element {
 	name: string;
 	position: number;
@@ -41,6 +43,13 @@ export class PhaseManagementComponent implements OnInit {
 	@ViewChild(MatPaginator) paginator: MatPaginator;
 	@ViewChild(MatSort) sort: MatSort;
 
+	constructor(private dataService: DataService) {
+		// dataService.getPhases().subscribe(phases => {
+		// 	console.log(phases);
+		// });
+		// console.log(dataService);
+	}
+
 	ngOnInit() {
 		this.dataSource.paginator = this.paginator;
 		this.dataSource.sort = this.sort;
@@ -48,14 +57,14 @@ export class PhaseManagementComponent implements OnInit {
 
 	handleAdd() {
 		console.log("handling add");
-		let { data } = this.dataSource;
-		data.push({
-			position: 20,
-			name: "Calcium",
-			weight: 40.078,
-			symbol: "Ca"
-		});
-		this.dataSource.data = data;
+		// let { data } = this.dataSource;
+		// data.push({
+		// 	position: 20,
+		// 	name: "Calcium",
+		// 	weight: 40.078,
+		// 	symbol: "Ca"
+		// });
+		// this.dataSource.data = data;
 	}
 
 	handleClear() {

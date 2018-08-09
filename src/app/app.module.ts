@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
 import { NgxChartsModule } from "@swimlane/ngx-charts";
 
 import { AppComponent } from "./app.component";
@@ -60,7 +61,8 @@ import { SecurityManagementComponent } from "./security-management/security-mana
 		MatPaginatorModule,
 		MatSortModule,
 		RoutingModule,
-		NgxChartsModule
+		NgxChartsModule,
+		HttpClientModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

@@ -8,28 +8,28 @@
 @include mat-core();
 html,
 body {
-	height: 100%;
+    height: 100%;
 }
 
 body {
-	margin: 0;
-	font-family: "Roboto", sans-serif;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
 }
 
-$custom-theme-primary: mat-palette($mat-teal);
-$custom-theme-accent: mat-palette($mat-orange, A200, A100, A400);
-$custom-theme-warn: mat-palette($mat-red);
-$light-theme: mat-light-theme(
-	$custom-theme-primary,
-	$custom-theme-accent,
-	$custom-theme-warn
-);
-$dark-theme: mat-dark-theme(
-	$custom-theme-primary,
-	$custom-theme-accent,
-	$custom-theme-warn
-);
+// colors
+$teal: mat-palette($mat-teal);
+$orange: mat-palette($mat-orange, A200, A100, A400);
+$deep-orange: mat-palette($mat-deep-orange);
+$light-blue: mat-palette($mat-light-blue);
+$red: mat-palette($mat-red);
+$amber: mat-palette($mat-amber, A200, A100, A400);
+$blue-gray: mat-palette($mat-blue-grey);
+$indigo: mat-palette($mat-indigo);
+// themes
+$light-theme: mat-light-theme($indigo, $teal, $deep-orange);
+$dark-theme: mat-dark-theme($blue-gray, $amber, $deep-orange);
+// adding to app
 @include angular-material-theme($light-theme);
 .dark-theme {
-	@include angular-material-theme($dark-theme);
+    @include angular-material-theme($dark-theme);
 }
